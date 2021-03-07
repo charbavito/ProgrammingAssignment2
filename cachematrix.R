@@ -1,13 +1,13 @@
-## Esse script recebe uma matriz inversível, gera a matriz inverida e armazena
-## esse resultado em cache, para que sempre que precisarmos recuperar novamente
-## essa matriz invertida, não precisemos executar novamente os cálculos de inversão
-## pois já teremos esses resultados em cache. Importante ressaltar que essa fase 
-## de recalcular a matrix só será evitada caso a matriz original não sofra alteração
+## This script receives an invertible matrix, generates an inverted matrix and stores
+## this cached result, so that whenever we need to recover again
+## this inverted matrix, we don't need to perform the inversion calculations again
+## because we will already have these results in cache. It is important to note that this phase
+## recalculating the matrix will only be avoided if the original matrix does not change
 
 
-## Minha primeira função (makeCacheMatrix()) recebe uma matrix inversível e
-## gera uma matriz invertida a partir da matrix original. Essa função também
-## gera 4 listas que poderão ser utilizadas pela minha segunda função (cacheSolve()),
+## My first function (makeCacheMatrix ()) receives an invertible matrix and
+## generates an inverted matrix from the original matrix. This function also
+## generates 4 lists that are used by my second function (cacheSolve ()).
 makeCacheMatrix <- function(x = matrix()) {
     mat_i <- NULL
     get <- function() x
@@ -25,13 +25,12 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Essa segunda função, recebe o objeto criado através da função makeCacheMatrix(),
-## contendo suas listas e verifica se a matriz original não sofreu alteração, 
-## nesse caso, ela não executará novamente a inversão e apenas retornará a matriz
-## invertida já armazenada em cache, caso contrário, ou seja, caso sua matriz
-## original tenha sofrido alguma alteração, a função cacheSolve() vai executar
-## novamente a inversão dessa nova matriz, visto que esta nova não possuia sua 
-## iversão armazenada em cache.
+## This second function, receives the object created through the makeCacheMatrix () function,
+## containing your lists and verifies that the original matrix has not changed,
+## in this case, it will not perform the inversion again and will only return the matrix
+## inverted already cached, otherwise, that is, if your matrix
+## original has been changed, the cacheSolve () function will execute
+## again the inversion of this new matrix.
 cacheSolve <- function(x, ...) {
     mat_i <- x$getsolve()
     if(!is.null(mat_i)) {
