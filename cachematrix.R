@@ -4,6 +4,8 @@
 ## because we will already have these results in cache. It is important to note that this phase
 ## recalculating the matrix will only be avoided if the original matrix does not change
 
+## If necessary I use this matrix for tests:
+## mat_test_01 <- matrix(c(1,0,0,2,1,0,3,4,1), nrow = 3, ncol=3)
 
 ## My first function (makeCacheMatrix ()) receives an invertible matrix and
 ## generates an inverted matrix from the original matrix. This function also
@@ -23,6 +25,8 @@ makeCacheMatrix <- function(x = matrix()) {
          setsolve = setsolve,
          getsolve = getsolve)
 }
+## for tests, I create tis object for use in the second function:
+## mat_cached <- makeCacheMatrix(mat_test_01)
 
 
 ## This second function, receives the object created through the makeCacheMatrix () function,
@@ -42,3 +46,8 @@ cacheSolve <- function(x, ...) {
     x$setsolve(mat_i)
     mat_i
 }
+## For the last test, I use this comando bellow:
+## cacheSolve(mat_cached)
+
+## Thanks for your time :)
+## Keep in touch: Instagram: @charbavito
